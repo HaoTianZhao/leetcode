@@ -12,6 +12,17 @@ package 剑指offer第二版.easy;
  */
 public class _005替换空格 {
     public String replaceSpace(String s) {
-        return "";
+        if (s == null) {
+            return "";
+        }
+        StringBuilder builder = new StringBuilder();
+        for (char c : s.toCharArray()) {
+            if (c == ' ') {
+                builder.append("%20");
+            } else {
+                builder.append(c);
+            }
+        }
+        return builder.toString();
     }
 }
